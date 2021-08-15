@@ -1,7 +1,34 @@
-*, *::after, *::before, 
-html, 
-body{
+*, *::after, *::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body{
+   font-family: sans-serif;
+}
+
+.task-input{
+    flex-direction: column;
+    padding: 1em;
+    background-color: lightslategray;
+}
+.task-container{
+    padding: 1em;
+    background-color: cyan;
+}
+
+.task-list{
+    flex-wrap: nowrap;
+    gap: 2em;
+    list-style: none;
+    background-color: lightgreen;
+}
+.task{
+    padding: 1em;
+    gap: 1em;
+
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: lightcoral;
 }
