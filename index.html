@@ -4,28 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/main.css">
     <link rel="stylesheet" href="/assets/utilities.css">
+    <link rel="stylesheet" href="/assets/main.css">
     <title>To do App</title>
 </head>
 <body>
     <main>
         <section class="container flex task-input">
+            
             <h2>Lista de Tarefas</h2>
-            <form>
-                <legend>Title</legend>
-                <input type="text" placeholder="Task Title">
-                <legend>Task</legend>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+            
+            <form class="flex form-input">
+
+                <legend>Título</legend>
+                <input class="input-title" type="text" placeholder="Título da Tarefa"><span class="focus-border"></span>
+
+                <legend>Tarefa</legend>
+                <textarea class="input-area" name="" id="" cols="30" rows="10" placeholder="Digite sua tarefa aqui..."></textarea>
+
             </form>
-            <button type="button">Salvar</button>
+            
+            <button class="btn btn-outline" type="button">Salvar</button>
+
         </section>
         
         <section class="container task-container">
             <ul class="grid task-list">
                 <!-- template -->
                 <li>
-                    <blockquote class="task flex">
+                    <blockquote class="flex task task-card">
                         <h4>Title</h4>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, nihil.
@@ -33,7 +40,7 @@
                     </blockquote>
                 </li>
                 <li>
-                    <blockquote class="task flex">
+                    <blockquote class="task flex task-card">
                         <h4>Title</h4>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, nihil.
@@ -41,7 +48,7 @@
                     </blockquote>
                 </li>
                 <li>
-                    <blockquote class="task flex">
+                    <blockquote class="task flex task-card">
                         <h4>Title</h4>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, nihil.
@@ -49,7 +56,7 @@
                     </blockquote>
                 </li>
                 <li>
-                    <blockquote class="task flex">
+                    <blockquote class="task flex task-card">
                         <h4>Title</h4>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, nihil.

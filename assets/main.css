@@ -5,30 +5,113 @@
 }
 
 body{
-   font-family: sans-serif;
+    color: #eee;
+    background-color: #151515;
+    letter-spacing: 0.050rem;
+    font-family: sans-serif;
 }
 
+/* input section */
 .task-input{
+    margin-top: 0.5rem;
+    gap: 1rem;
     flex-direction: column;
-    padding: 1em;
-    background-color: lightslategray;
+    padding: 1.25em;
+    background-color: transparent;
 }
+
+/* form */
+.form-input{
+    position: relative;
+    align-items: initial;
+    flex-direction: column;
+    gap: 0.45em;
+}
+.input-title{
+    padding: 0.5em 0.2em;
+    border: none;
+    border-radius: 0.15rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.input-title:focus{
+    transition: 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.input-title ~ .focus-border{
+    position: absolute;
+    top: 3.325rem;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0.15rem;
+    transition: 0.4s;
+    border-radius: 0.15rem;
+    
+    background: #ED213A;  
+    background: -webkit-linear-gradient(to right, #93291E, #ED213A);  
+    background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+ 
+
+}
+.input-title:focus ~ .focus-border{
+    width: 100%;
+    transition: 0.4s;
+}
+
+.input-area{
+    padding: 0.25rem;
+    border: none;
+    border-radius: 0.15rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.input-area:focus{
+    transition: 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.input-title:focus,.input-area:focus{
+    outline: none;
+}
+
+.btn{
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.19);
+    padding: 0.5em 1.5em;
+    background: #b31217;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -2px 0px inset;
+}
+.btn-outline:hover{
+    background: #7e0705;
+    transition: all 0.4s ease-in;
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+
+/* tasks section */
 .task-container{
     padding: 1em;
-    background-color: cyan;
 }
 
 .task-list{
-    flex-wrap: nowrap;
-    gap: 2em;
+    gap: 1em;
     list-style: none;
-    background-color: lightgreen;
+    transform-style: preserve-3d;
+    perspective: 10rem;
 }
 .task{
     padding: 1em;
     gap: 1em;
-
     flex-direction: column;
-    align-items: flex-start;
-    background-color: lightcoral;
+    align-items: initial;
+}
+.task-card{
+    background: #656565;
+}
+.task-card:hover{
+    
+    transition: 0.3s;
+    transform: translateZ(2px);
 }
