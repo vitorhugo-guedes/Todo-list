@@ -1,25 +1,64 @@
+
 class Task extends HTMLElement{
     constructor(){
         super()
-        this.makeTask()
-        
+        this.init()
     }
-    makeTask(){
+    init(){
         const shadow = this.attachShadow({mode: 'open'});
-        shadow.innerHTML = 'Olá';
         shadow.appendChild(this.Styles());
-        return shadow
+        shadow.appendChild(this.taskCreate());
+        return shadow;
     }
     Styles(){
         const style = document.createElement('style');
         style.textContent = `
-            .algo{
-                background-color: pink;
-                width: 220px;
-                height: 200px; 
+        *,*::before,*::after{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .flex{
+            display: flex;
+            align-items: center;
+        }
+            .task{
+                padding: 1em;
+                gap: 1em;
+                flex-direction: column;
+                align-items: initial;
+            }
+            .task-card{
+                background: var(--task_card-color);
+            }
+
+            .task-title{
+                border-bottom: var(--task_card-border_title) solid 1px;
+            }
+            .task-card:hover{
+                transition: 0.3s;
+                transform: translate3d( 0px, -8px, 2px);
             }
         `
-        return style
+        return style;
+    }
+    taskCreate(){
+        const card = document.createElement('blockquote');
+        let title = document.createElement('h4');
+        let content = document.createElement('p');
+
+        title.textContent = `Title`
+        content.textContent = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, nihil.`
+
+        title.classList.add('task-title');
+        card.classList.add('task-card');
+        card.classList.add('task');
+        card.classList.add('flex');
+
+        card.appendChild(title);
+        card.appendChild(content);
+        
+        return card;
     }
     
 }

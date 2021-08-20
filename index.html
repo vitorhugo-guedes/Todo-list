@@ -24,12 +24,12 @@
 
             </form>
             
-            <button class="btn btn-outline" type="button">Salvar</button>
+            <button id="saveBtn" class="btn btn-outline" type="button">Salvar</button>
 
         </section>
         
         <section class="container task-container">
-            <ul class="grid task-list">
+            <ul class="grid task-list" id="taskList">
                 <!-- template -->
                 <li>
                     <blockquote class="flex task task-card">
@@ -39,11 +39,14 @@
                         </p>
                     </blockquote>
                 </li>
+                <li>
+                    <task-card></task-card>
+                </li>
             </ul>
         </section>
     </main>
-    <task-card></task-card>
-    <!-- <script src="/source/main.js" defer></script> -->
+    
+    <script src="/source/main.js" defer></script>
     <script src="/source/taskComponent.js"></script>
 </body>
 </html>
