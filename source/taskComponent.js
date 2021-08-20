@@ -1,13 +1,12 @@
-
-class Task extends HTMLElement{
-    constructor(){
+export class Task extends HTMLElement{
+    constructor(Title, Text){
         super()
-        this.init()
+        this.init(Title, Text)
     }
-    init(){
+    init(title, content){
         const shadow = this.attachShadow({mode: 'open'});
         shadow.appendChild(this.Styles());
-        shadow.appendChild(this.taskCreate());
+        shadow.appendChild(this.taskCreate(title, content));
         return shadow;
     }
     Styles(){
@@ -42,13 +41,13 @@ class Task extends HTMLElement{
         `
         return style;
     }
-    taskCreate(){
+    taskCreate(taskTitle, taskText){
         const card = document.createElement('blockquote');
         let title = document.createElement('h4');
         let content = document.createElement('p');
 
-        title.textContent = `Title`
-        content.textContent = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, nihil.`
+        title.textContent = `${taskTitle}`
+        content.textContent = `${taskText}`
 
         title.classList.add('task-title');
         card.classList.add('task-card');
