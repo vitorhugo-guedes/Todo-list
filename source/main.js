@@ -9,6 +9,7 @@ const localTasks = JSON.parse(localStorage.getItem('tasks'));
 let tasks = localStorage.getItem('tasks') !== null ? localTasks : [];
 
 const update = () => {
+    
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 

@@ -8,8 +8,8 @@
 }
 
 :root{
-    --font-color: #ddd;
-    --bg-color: #101010;
+    --font-color: #333;
+    --bg-color: #fff;
     --btn-color: #b31217;
     --btn-hover_color: #7e0705;
     --task_card-color: #656565;
@@ -51,11 +51,11 @@ legend{
     padding: 0.5em 0.2em;
     border: none;
     border-radius: 0.15rem;
-    box-shadow: rgba(150, 0, 0, 0.16) 0px 3px 6px, rgba(100, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
 .input-title:focus{
     transition: 0.4s;
-    box-shadow: rgba(200, 0, 0, 0.16) 0px 3px 6px, rgba(200, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
 }
 .input-title ~ .focus-border{
     position: absolute;
@@ -81,11 +81,11 @@ legend{
     padding: 0.25rem;
     border: none;
     border-radius: 0.15rem;
-    box-shadow: rgba(255, 30, 30, 0.3) 0px 1px 2px 0px, rgba(255, 30, 30, 0.15) 0px 1px 4px 1px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 .input-area:focus{
     transition: 0.4s;
-    box-shadow: rgba(200, 0, 0, 0.4) 0px 2px 4px, rgba(200, 0, 0, 0.3) 0px 7px 13px -3px, rgba(200, 0, 0, 0.2) 0px -3px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px, rgba(0, 0, 0, 0.15) 0px 7px 13px -3px, rgba(0, 0, 0, 0.15) 0px -3px 0px inset;
 }
 
 .input-title:focus,.input-area:focus{
@@ -93,7 +93,7 @@ legend{
 }
 
 .btn{
-    color: var(--font-color);
+    color: #fff;
     cursor: pointer;
     text-transform: uppercase;
     border-radius: 0.25rem;

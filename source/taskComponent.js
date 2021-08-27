@@ -28,6 +28,7 @@ export class Task extends HTMLElement{
                 align-items: initial;
             }
             .task-card{
+                color: #fff;
                 background: var(--task_card-color);
             }
 
