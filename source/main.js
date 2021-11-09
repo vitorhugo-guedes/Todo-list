@@ -1,4 +1,5 @@
 import { Task } from "./taskComponent.js";
+import * as Validation from "./userValidations.js"
 
 const saveBtn = document.querySelector('#saveBtn');
 const inputTitle = document.querySelector('.input-title');
@@ -9,7 +10,6 @@ const localTasks = JSON.parse(localStorage.getItem('tasks'));
 let tasks = localStorage.getItem('tasks') !== null ? localTasks : [];
 
 const update = () => {
-    
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
@@ -27,7 +27,12 @@ displayTasks();
 saveBtn.addEventListener('click', () => {
     const task = {title: inputTitle.value, text: inputContent.value};
 
-    tasks.push(task);
+    if(task.title | task.text == ""){
+        Validation.emptyTask(task.title, task.text);
+        return;
+    }else{
+        tasks.push(task);
+    }
     displayTasks();
     update();
 })
