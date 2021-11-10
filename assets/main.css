@@ -10,11 +10,11 @@
 :root{
     --font-color: #333;
 
-    --bg-color: #d4d3d3;
+    --bg-color: #F0F3F4;
     --btn-color: #b31217;
     --btn-hover_color: #7e0705;
 
-    --task-bg-title: #5f676e;
+    --task_bg-title: #5f676e;
     --task_card-color: #687179;
     --task_card-border_title: #555;
     --task_card-important: #6A0000;

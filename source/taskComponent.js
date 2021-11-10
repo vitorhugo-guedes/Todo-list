@@ -42,7 +42,7 @@ export class Task extends HTMLElement{
         }
         .task-title-wrapper{
             padding: 0.75rem 1rem;
-            background-color: var(--task-bg-title);
+            background-color: var(--task_bg-title);
             border-bottom: var(--task_card-border_title) solid 1px;
         }
         .task-content-wrapper{
@@ -61,12 +61,10 @@ export class Task extends HTMLElement{
         title.textContent = `${taskTitle}`;
         content.textContent = `${taskText}`;
 
-        title.classList.add('task-title');
-        titleWrapper.classList.add('task-title-wrapper');
-        contentWrapper.classList.add('task-content-wrapper');
-        card.classList.add('task-card');
-        card.classList.add('task');
-        card.classList.add('flex');
+        this.addCssClass(['task-title'], title);
+        this.addCssClass(['task-title-wrapper'], titleWrapper);
+        this.addCssClass(['task-content-wrapper'], contentWrapper);
+        this.addCssClass(['task-card', 'task', 'flex'], card);
 
         titleWrapper.appendChild(title);
         contentWrapper.appendChild(content);
@@ -74,6 +72,11 @@ export class Task extends HTMLElement{
         card.appendChild(contentWrapper);
         
         return card;
+    }
+    addCssClass([...classes], element){
+        classes.forEach(Class =>{
+            element.classList.add(`${Class}`);
+        })
     }
     
 }

@@ -25,11 +25,21 @@ const displayTasks = () =>{
 displayTasks();
 
 const pushTaskIntoUl = task =>{
-    if(Validation.emptyTask()){
+    if(Validation.emptyTaskWarning()){
         tasks.push(task);
     }
 
 }
+
+function inputFocusOut(){
+    inputTitle.addEventListener('focusout', ()=>{
+        warning[0].classList.remove('vibration');
+    })
+    inputContent.addEventListener('focusout', ()=>{
+        warning[1].classList.remove('vibration');
+    })
+}
+inputFocusOut();
 
 saveBtn.addEventListener('click', () => {
     const task = {title: inputTitle.value, text: inputContent.value};
@@ -38,3 +48,4 @@ saveBtn.addEventListener('click', () => {
     displayTasks();
     update();
 })
+
