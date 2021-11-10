@@ -2,6 +2,7 @@ export class Task extends HTMLElement{
     constructor(Title, Text){
         super()
         this.init(Title, Text)
+        
     }
     init(title, content){
         const shadow = this.attachShadow({mode: 'open'});
@@ -41,6 +42,8 @@ export class Task extends HTMLElement{
             transform: translate3d( 0px, -8px, 2px);
         }
         .task-title-wrapper{
+            display: flex;
+            justify-content: space-between;
             padding: 0.75rem 1rem;
             background-color: var(--task_bg-title);
             border-bottom: var(--task_card-border_title) solid 1px;
@@ -48,6 +51,15 @@ export class Task extends HTMLElement{
         .task-content-wrapper{
             padding: 0rem 0.5rem 1rem 1rem;
         }
+        
+        .remove{
+            font-size: 15px;
+            font-weight: bold; 
+            text-decoration: none; 
+            color: #fff;
+            cursor: pointer;
+        }
+
         `
         return style;
     }
@@ -55,6 +67,7 @@ export class Task extends HTMLElement{
         const card = document.createElement('blockquote');
         const titleWrapper = document.createElement('div');
         const contentWrapper = document.createElement('div');
+        const closeBtn = this.createCloseBtn();
         let title = document.createElement('h4');
         let content = document.createElement('p');
 
@@ -67,6 +80,7 @@ export class Task extends HTMLElement{
         this.addCssClass(['task-card', 'task', 'flex'], card);
 
         titleWrapper.appendChild(title);
+        titleWrapper.appendChild(closeBtn);
         contentWrapper.appendChild(content);
         card.appendChild(titleWrapper);
         card.appendChild(contentWrapper);
@@ -77,6 +91,14 @@ export class Task extends HTMLElement{
         classes.forEach(Class =>{
             element.classList.add(`${Class}`);
         })
+    }
+    createCloseBtn(){
+        const closebtn = document.createElement('a');
+        closebtn.textContent = 'x';
+        
+        this.addCssClass(['remove'], closebtn);
+        closebtn.setAttribute('title', 'Remover');
+        return closebtn;
     }
     
 }
