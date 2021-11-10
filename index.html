@@ -4,23 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="/assets/utilities.css">
     <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <title>To do App</title>
 </head>
 <body>
     <main>
-        <section class="container flex task-input">
-            
+        <section class="container flex task-section">
+
             <h2 class="hero-title">Lista de Tarefas</h2>
             
             <form class="flex form-input">
 
                 <legend>Título</legend>
                 <input class="input-title" type="text" placeholder="Título da Tarefa"><span class="focus-border"></span>
-
+                <span class="warning" id="warning">Preencha este campo <i class="fas fa-exclamation-triangle"></i></span>
                 <legend>Tarefa</legend>
                 <textarea class="input-area" cols="30" rows="10" placeholder="Digite sua tarefa aqui..."></textarea>
+                <span class="warning" id="warning">Preencha este campo <i class="fas fa-exclamation-triangle"></i></span>
 
             </form>
             <button id="saveBtn" class="btn btn-outline" type="button">Salvar</button>
@@ -29,21 +35,12 @@
         
         <section class="container task-container">
             <ul class="grid task-list" id="taskList">
-                <!-- template -->
-                <li>
-                    <blockquote class="flex task task-card">
-                        <h4 class="task-title">Title</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, nihil.
-                        </p>
-                    </blockquote>
-                </li>
             </ul>
         </section>
     </main>
     
     <script src="/source/main.js" type="module" defer></script>
     <script src="/source/taskComponent.js" type="module"></script>
-    <!-- <script type="module" src="/source/userValidations.mjs"></script> -->
+    <script type="module" src="/source/userValidations.js"></script>
 </body>
 </html>

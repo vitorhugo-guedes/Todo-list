@@ -2,8 +2,8 @@ import { Task } from "./taskComponent.js";
 import * as Validation from "./userValidations.js"
 
 const saveBtn = document.querySelector('#saveBtn');
-const inputTitle = document.querySelector('.input-title');
-const inputContent = document.querySelector('.input-area');
+export const inputTitle = document.querySelector('.input-title');
+export const inputContent = document.querySelector('.input-area');
 const taskUl = document.querySelector('#taskList');
 
 const localTasks = JSON.parse(localStorage.getItem('tasks'));
@@ -24,15 +24,17 @@ const displayTasks = () =>{
 }
 displayTasks();
 
+const pushTaskIntoUl = task =>{
+    if(Validation.emptyTask()){
+        tasks.push(task);
+    }
+
+}
+
 saveBtn.addEventListener('click', () => {
     const task = {title: inputTitle.value, text: inputContent.value};
 
-    if(task.title | task.text == ""){
-        Validation.emptyTask(task.title, task.text);
-        return;
-    }else{
-        tasks.push(task);
-    }
+    pushTaskIntoUl(task);
     displayTasks();
     update();
 })
